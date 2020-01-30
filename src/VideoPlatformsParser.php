@@ -91,7 +91,7 @@ class VideoPlatformsParser
             'thumbnail' => (!empty($info['thumbnail'])) ? $info['thumbnail'] : '',
             'tags' => (!empty($info['tags'])) ? $info['tags'] : [],
             'duration' => (! empty($info['duration'])) ? intval($info['duration']) : 0,
-            'duration' => (! empty($info['views_total'])) ? intval($info['views_total']) : 0,
+            'views_total' => (! empty($info['views_total'])) ? intval($info['views_total']) : 0,
             'api' => (!empty($info['api'])) ? $info['api'] : false,
         ];
     }
