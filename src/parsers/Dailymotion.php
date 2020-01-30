@@ -48,7 +48,7 @@ class Dailymotion
      */
     public function getVideoInfoWithAPI($id)
     {
-        $url = 'https://api.dailymotion.com/video/' . $id . '?fields=id,title,description,tags,thumbnail_url,duration';
+        $url = 'https://api.dailymotion.com/video/' . $id . '?fields=id,title,description,tags,thumbnail_url,duration,views_total';
 
         /* Make call to API */
         $response = VideoPlatformsParser::HTTPGet($url);
@@ -63,6 +63,7 @@ class Dailymotion
             'thumbnail' => ! empty($json['thumbnail_url']) ? $json['thumbnail_url'] : null,
             'tags' => ! empty($json['tags']) ? $json['tags'] : null,
             'duration' => ! empty($json['duration']) ? $json['duration'] : null,
+            'views'=>! empty($json['views_total']) ? $json['views_total'] : null,
             'api' => true
         ];
     }
